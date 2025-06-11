@@ -371,7 +371,8 @@ function buildFormat(data, saved = true) {
         cloneFormat.onclick = () => {
             popUp4.style.display = "flex";
 
-            cloneForm.addEventListener('submit', () => {
+            cloneForm.addEventListener('submit', event => {
+                event.preventDefault();
                 const newFormName = newName.value.trim();
 
                 const cloneData = JSON.parse(JSON.stringify(data));
