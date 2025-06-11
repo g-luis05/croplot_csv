@@ -11,6 +11,7 @@ const urlsToCache = [
 
 // LETS INSTALL THE SERVICEE WORKER AND THEN SAVE THE CACHE
 self.addEventListener('install', event =>  {
+    self.skipWaiting();
     event.waitUntil(
         caches.open(CACHE_NAME).then(cache => {
             return cache.addAll(urlsToCache);
@@ -40,6 +41,6 @@ self.addEventListener('activate', event => {
                     }
                 })
             )
-        })
+        }).then(() => self.clients.claim())
     )
 })
