@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#009688">
+    <link rel="icon" href="assets/icon-logo-off.png">
+    <title>CroPlot CSV</title>
+</head>
+<body>
+    <header>
+        <div></div>
+    </header>
+    <section id="container">
+        <h1 id="title">Registro de formatos</h1>
+        <button id="add-form-btn" class="btn">Añadir formato de datos</button>
+        <section id="forms">
+            <!--The forms here-->
+        </section>
+        <!--POP-UP 1-->
+        <section id="pop-up1">
+            <form id="structure-form">
+                <h2 class="popup-title">ESTRUCTURA</h2>
+                <section id="structure-type">
+                    <label for="form-name" class="label">
+                        Nombre de formato
+                        <input type="text" id="form-name" class="input" name="form-name" placeholder="Ingresar el nombre del formato" required>
+                    </label>
+                    <label for="block-number" class="label">
+                        Bloques por tratamiento
+                        <input type="number" id="block-number" class="input" name="block-number" placeholder="Ingresar el número de bloques por tratamiento" required>
+                    </label>
+                    <label for="rep-number" class="label">
+                        Réplicas por bloque
+                        <input type="number" id="rep-number" class="input" name="rep-number" placeholder="Ingresar número de réplicas por bloque" required>
+                    </label>
+                    <!-- <label for="exp" class="label">
+                        Tipo de experimento:
+                        <select name="exp" id="exp" class="input">
+                            <option value="riego">Riego</option>
+                            <option value="sequia">Sequía</option>
+                        </select>
+                    </label> -->
+                    <div>
+                        Tratamiento
+                        <button type="button" id="tt-button-add" class="btn">Añadir</button>
+                        <button type="button" id="tt-button-del" class="btn">Quitar</button>
+                    </div>
+                </section>
+                <section id="tt-names">
+                    <!--When adding a treatment, here. Adding a label and input / placeholder. Display grid or flex column.-->
+                </section>
+                <div class="center-btn-popup">
+                    <input type="submit" name="submit-btn1" id="submit-btn1" class="btn-end-confirm" value="✔">
+                    <button type="button" id="cancel-btn1"  class="btn-end">✘</button>
+                </div>
+            </form>
+        <!--End of POP-UP 1-->
+        </section>
+        <!--POP-UP 2-->
+        <section id="pop-up2">
+            <form id="data-form">
+                <h2 class="popup-title">VARIABLES</h2>
+                <div class="center-btn-popup">
+                    <button type="button" id="data-btn-add" class="btn">Añadir dato</button>
+                    <button type="button" id="data-btn-del" class="btn">Eliminar dato</button>
+                </div>
+                <section id="data-names">
+                    <!--Here goes the inputs of data names. -->
+                </section>
+                <div class="center-btn-popup">
+                    <input type="submit" name="submit-btn2" id="submit-btn2" class="btn-end-confirm" value="✔">
+                    <button type="button" id="cancel-btn2" class="btn-end">✘</button>
+                </div>
+            </form>
+        </section>
+        <!--End of POP-UP 2-->
+
+        <!-- POP-UP 3 -->
+         <section id="pop-up3">
+            <article>
+                <p class="popup-confirm">¿Está seguro que desea eliminar este formato?</p>
+                <div class="center-btn-popup">
+                    <button type="button" id = "del-format-btn" class="btn-end-confirm">✔</button>
+                    <button type="button" id="cancel-del-format" class="btn-end">✘</button>
+                </div>
+            </article>
+         </section>
+
+         <!-- POP-UP 4 -->
+         <section id="pop-up4">
+            <form id="clone-name">
+                <h2 class="popup-title">Clonar formato</h2>
+                <label for="clone-name-input" class="label">
+                    Nombre de nuevo formato
+                    <input type="text" id="clone-name-input" class="input" name="form-name" placeholder="Ingresar el nombre del formato clonado" required>
+                </label>
+                <div class="center-btn-popup">
+                    <input type="submit" id="confirm-new-clone" class="btn-end-confirm" value="✔">
+                    <button type="button" id="cancel-new-clone" class="btn-end">✘</button>
+                </div>
+            </form>
+         </section>
+
+         <section id="pop-up5">
+            <article>
+                <h2 class="popup-title">Descarga CSV</h2>
+                <p class="popup-confirm">¿Desea confirmar la descarga de datos?</p>
+                <div class="center-btn-popup">
+                    <button type="button" id="confirm-download" class="btn-end-confirm">✔</button>
+                    <button type="button" id="cancel-download" class="btn-end">✘</button>
+                </div>
+            </article>
+         </section>
+    </section>
+    <script src="script.js" defer></script>
+    <script src="sw.js"></script>
+</body>
+</html>
