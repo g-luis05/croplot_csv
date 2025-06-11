@@ -38,8 +38,8 @@ let formatSection = document.getElementById('forms');
 
 // SAVED FORMATS
 
-let savedFormatsStr = localStorage.getItem('savedFormats'); //This is a string
-let savedFormats = JSON.parse(savedFormatsStr) //Now it's a list of objects with JSON.parse
+let savedFormatsStr = localStorage.getItem('savedFormats'); 
+let savedFormats = JSON.parse(savedFormatsStr) 
 
 let formats = savedFormats || []; //If there is not saved formats before, it will be an empty array
 
@@ -91,7 +91,6 @@ structureForm.addEventListener('submit', event => {
     const formName = document.getElementById('form-name').value.trim();
     const blockNumber = parseInt(document.getElementById('block-number').value);
     const repsNumber = parseInt(document.getElementById('rep-number').value);
-    // const expType = document.getElementById('exp').value;
 
     const ttInputs = ttNameSection.querySelectorAll('input');
     const tt = [];
@@ -287,14 +286,14 @@ function buildFormat(data, saved = true) {
                     input.className = "input-format";
                     input.placeholder = variable;
     
-                    //localStorage - https://www.youtube.com/watch?v=-ZRDZyUjEEI
+                    //localStorage by input
                     const code = `${data.id}_tt${index + 1}_b${block}_var${position + 1}_rep${rep}`; //SAVE INPUTS EVEN WHEN RELOADING 
                     input.value = localStorage.getItem(code) || "";
                     input.addEventListener('input', () => {
                         localStorage.setItem(code, input.value);
                     }); 
                     
-                    input.dataset.code = code; //Catch info to use it after - DATASET https://www.youtube.com/watch?v=cTe5vQAm2So
+                    input.dataset.code = code; //Catch info to use it after - DATASET 
                     cardBody.appendChild(input);
                 });
                 
@@ -331,7 +330,7 @@ function buildFormat(data, saved = true) {
                     };
                 });
 
-                // blobs - https://www.youtube.com/watch?v=WqBs_msUOXY
+                // blobs 
                 console.log(csvTitles);
                 const bom = '\uFEFF'
                 const blob = new Blob([bom + csvTitles], {type: "text/csv" });
