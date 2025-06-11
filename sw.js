@@ -1,5 +1,3 @@
-const { cache } = require("react");
-
 const CACHE_NAME = "croplot-csv-v1";
 
 const urlsToCache = [

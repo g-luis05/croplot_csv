@@ -1,7 +1,7 @@
 {
     "name": "CroPlot - Generador de formatos",
     "short_name": "CroPlot",
-    "start_url": "./index.html",
+    "start_url": ".",
     "display": "standalone",
     "background_color": "#ffffff",
     "theme_color": "#009688",
@@ -9,6 +9,11 @@
         {
             "src": "assets/icon-logo-off.png",
             "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "assets/icon-logo-off.png",
+            "sizes": "512x512",
             "type": "image/png"
         }
     ]
