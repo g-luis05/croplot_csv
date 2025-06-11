@@ -1,11 +1,11 @@
 # CROPLOT CSV
 
 Agricultural Research:
-Simple and quick PWA created for a group of researchers who needed to digitalize their info once taken the measures at the researched crops. 
+Simple and fast PWA created for a group of researchers who needed to digitize their information once measurements were taken on the crops they were investigating.
 
 # CREATE FORMATS
-In this App, formats can be created. Setting the structure by name of the format, treatments (experiments on the crops), blocks per treatment and replicas per blocks. 
-Also, variables can be added to make the measures.
+In this application, you can create formats. These can be configured in terms of structure by format name, treatments (crop experiments), blocks per treatment, and replicates per block. 
+You can also add variables to perform measurements.
 
 # LANGUAGES USED
 JavaScript for logic, HTML for app structure, CSS for style. 
