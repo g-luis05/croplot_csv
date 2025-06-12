@@ -1,4 +1,4 @@
-const CACHE_NAME = "croplot-csv-v1";
+const CACHE_NAME = "croplot-csv-v2";
 
 const urlsToCache = [
     "./",
