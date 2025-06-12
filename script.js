@@ -370,23 +370,23 @@ function buildFormat(data, saved = true) {
         
         cloneFormat.onclick = () => {
             popUp4.style.display = "flex";
-        };
 
-        confirmNewClone.onclick = () => {
-            const newFormName = newName.value.trim();
+            confirmNewClone.onclick = () => {
+                const newFormName = newName.value.trim();
 
-            const cloneData = JSON.parse(JSON.stringify(data));
-            cloneData.id = idGenerator();
-            cloneData.name = newFormName;
-            
-            buildFormat(cloneData, true); 
+                const cloneData = JSON.parse(JSON.stringify(data));
+                cloneData.id = idGenerator();
+                cloneData.name = newFormName;
+                
+                buildFormat(cloneData, true); 
 
-            newName.value = "";
-            popUp4.style.display = "none";
-        };
+                newName.value = "";
+                popUp4.style.display = "none";
+            };
 
             cancelNewClone.onclick = () => {
                 popUp4.style.display = "none";
+            };
         };
     });
     
