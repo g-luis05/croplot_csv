@@ -382,6 +382,8 @@ function buildFormat(data, saved = true) {
 
                 newName.value = "";
                 popUp4.style.display = "none";
+                cardContainer.style.display = cardContainer.style.display === "none" ? "block" : "none";
+                formatBtnOrg.style.display = formatBtnOrg.style.display === "none" ? "flex" : "none";
             };
 
             cancelNewClone.onclick = () => {
