@@ -311,7 +311,7 @@ function buildFormat(data, saved = true) {
         
             popUp5.style.display = "flex";
 
-            confirmDownload.addEventListener('click', () => {
+            confirmDownload.onclick = () => {
                 let csvTitles = "Tratamiento,Bloque,Réplica," + data.var.join(",") + "\n";
 
                 data.treatments.forEach((treatment, ttIndex) => {
@@ -341,11 +341,11 @@ function buildFormat(data, saved = true) {
 
                 cleanInputs(cardContainer);
                 popUp5.style.display = "none";
-            });
+            };
 
-            cancelDownload.addEventListener('click', () => {
+            cancelDownload.onclick = () => {
                 popUp5.style.display = "none";
-            });
+            };
             
         
         };
@@ -353,7 +353,7 @@ function buildFormat(data, saved = true) {
         delFormat.onclick = () => {
             popUp3.style.display = "flex";
 
-            delFormatBtn.addEventListener('click', () => {
+            delFormatBtn.onclick = () => {
                 cleanInputs(cardContainer);
 
                 formatContainer.remove();
@@ -361,33 +361,32 @@ function buildFormat(data, saved = true) {
 
                 localStorage.setItem('savedFormats', JSON.stringify(formats));
                 popUp3.style.display = "none";
-            });
+            };
 
-            cancelDelBtn.addEventListener('click', () => {
+            cancelDelBtn.onclick = () => {
                 popUp3.style.display = "none";
-            })
+            };
         }
         
         cloneFormat.onclick = () => {
             popUp4.style.display = "flex";
+        };
 
-            cloneForm.addEventListener('submit', event => {
-                event.preventDefault();
-                const newFormName = newName.value.trim();
+        confirmNewClone.onclick = () => {
+            const newFormName = newName.value.trim();
 
-                const cloneData = JSON.parse(JSON.stringify(data));
-                cloneData.id = idGenerator();
-                cloneData.name = newFormName;
-                
-                buildFormat(cloneData, true); 
+            const cloneData = JSON.parse(JSON.stringify(data));
+            cloneData.id = idGenerator();
+            cloneData.name = newFormName;
+            
+            buildFormat(cloneData, true); 
 
-                newName.value = "";
+            newName.value = "";
+            popUp4.style.display = "none";
+        };
+
+            cancelNewClone.onclick = () => {
                 popUp4.style.display = "none";
-            });
-
-            cancelNewClone.addEventListener('click', () => {
-                popUp4.style.display = "none";
-            })
         };
     });
     

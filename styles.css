@@ -55,7 +55,7 @@ header div {
     background-color: rgba(0, 0, 0, 0.6);
 }
 
-#pop-up1 form, #pop-up2 form, #pop-up3 article, #pop-up4 form, #pop-up5 article {
+#pop-up1 form, #pop-up2 form, #pop-up3 article, #pop-up4 article, #pop-up5 article {
     background-color: white;
     padding: 20px;
     border-radius: 12px;
